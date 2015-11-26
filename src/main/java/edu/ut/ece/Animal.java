@@ -7,4 +7,5 @@ public abstract class Animal {
     public void setName(String name) { this.name = name; }
     public void greeting() { System.out.println(say()); }
     public abstract String say();
+    public abstract String canFly();
 }

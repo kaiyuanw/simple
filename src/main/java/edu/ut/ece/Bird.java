@@ -1,6 +1,6 @@
 package edu.ut.ece;
 
-public class Bird extends Animal implements Flyable {
+public class Bird extends Animal {
     @Override
     public String say() {
         return "I'm a bird. " + canFly();
