@@ -5,4 +5,8 @@ public class Main {
         Animal bird = new Bird();
         bird.greeting();
     }
+
+    public static void anotherMethod() {
+        System.out.println("another method");
+    }
 }
