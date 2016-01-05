@@ -37,7 +37,7 @@ public class ClassWithInstanceMethods {
         return four;
     }
     
-    private int getFive() {
+    int getFive() {
         return five;
     }
     
