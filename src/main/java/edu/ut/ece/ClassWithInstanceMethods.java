@@ -3,6 +3,7 @@ package edu.ut.ece;
 public class ClassWithInstanceMethods {
     
     private int four = 4;
+    int five = 5;
     
     public int getOne() {
         return getTwo() - 1;
@@ -34,6 +35,10 @@ public class ClassWithInstanceMethods {
     
     private int getFour() {
         return four;
+    }
+    
+    private int getFive() {
+        return five;
     }
     
     public int getSix() {
