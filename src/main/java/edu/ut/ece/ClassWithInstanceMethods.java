@@ -1,6 +1,9 @@
 package edu.ut.ece;
 
 public class ClassWithInstanceMethods {
+    
+    private int four = 4;
+    
     public int getOne() {
         return getTwo() - 1;
     }
@@ -27,6 +30,10 @@ public class ClassWithInstanceMethods {
         if (d + f - i == 3.0)
             return 3;
         return 3;
+    }
+    
+    private int getFour() {
+        return four;
     }
     
     public int getSix() {
