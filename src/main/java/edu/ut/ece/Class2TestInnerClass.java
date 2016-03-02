@@ -8,7 +8,7 @@ public class Class2TestInnerClass {
 	public int instanceMethod(String arg1, int arg2, Dog d) {
 		int a = 0 + arg2;
 		String b = a + "" + arg1;
-		return instanceField + Integer.valueOf(b) + staticField;
+		return this.instanceField + Integer.valueOf(b) + staticField;
 	}
 	
 	public Bird instanceMethod2() {
@@ -31,7 +31,7 @@ public class Class2TestInnerClass {
 	}
 
 	public static String staticMethod(String arg1, int arg2) {
-		String s = arg1 + arg2 + staticField;
+		String s = arg1 + arg2 + Class2TestInnerClass.staticField;
 		return s;
 	}
 }
