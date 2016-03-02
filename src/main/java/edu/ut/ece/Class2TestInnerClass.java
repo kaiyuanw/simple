@@ -6,7 +6,7 @@ public class Class2TestInnerClass {
 	private static int staticField;
 
 	public int instanceMethod(String arg1, int arg2, Dog d) {
-		int a = 0 + arg2;
+		int a = 0 + arg2 - instanceField;
 		String b = a + "" + arg1;
 		return this.instanceField + Integer.valueOf(b) + staticField;
 	}
