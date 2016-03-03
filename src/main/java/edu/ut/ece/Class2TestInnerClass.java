@@ -34,4 +34,8 @@ public class Class2TestInnerClass {
 		String s = arg1 + arg2 + Class2TestInnerClass.staticField;
 		return s;
 	}
+	
+	public void voidMethod() {
+		
+	}
 }
