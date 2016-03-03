@@ -2,7 +2,7 @@ package edu.ut.ece;
 
 public class Class2TestInnerClass {
 	
-	private int instanceField;
+	private int instanceField = 1;
 	private static int staticField;
 
 	public int instanceMethod(String arg1, int arg2, Dog d) {
