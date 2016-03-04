@@ -35,11 +35,11 @@ public class Class2TestInnerClass {
 		return s;
 	}
 	
-	static class T {
-		public static void m(int a) {}
-	}
-	
-	public static void voidMethod(int a) {
-		T.m(a);
-	}
+//	static class T {
+//		public static void m(int a) {}
+//	}
+//	
+//	public static void voidMethod(int a) {
+//		T.m(a);
+//	}
 }
