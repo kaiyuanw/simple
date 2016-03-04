@@ -36,10 +36,10 @@ public class Class2TestInnerClass {
 	}
 	
 	static class T {
-		public static void m() {}
+		public static void m(int a) {}
 	}
 	
-	public void voidMethod() {
-		T.m();
+	public void voidMethod(int a) {
+		T.m(a);
 	}
 }
