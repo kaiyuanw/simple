@@ -35,7 +35,11 @@ public class Class2TestInnerClass {
 		return s;
 	}
 	
+	static class T {
+		public static void m() {}
+	}
+	
 	public void voidMethod() {
-		
+		T.m();
 	}
 }
