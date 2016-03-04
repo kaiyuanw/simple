@@ -39,7 +39,7 @@ public class Class2TestInnerClass {
 		public static void m(int a) {}
 	}
 	
-	public void voidMethod(int a) {
+	public static void voidMethod(int a) {
 		T.m(a);
 	}
 }
