@@ -35,7 +35,31 @@ public class Class2TestInnerClass {
 		return s;
 	}
 	
+//	static class X {
+//		public static void voidMethod(int a) {
+//			Class2TestInnerClass.voidMethod(a,0);
+//		}
+//	}
+	
 	public static void voidMethod(int a) {
-		System.out.println(a);
+		voidMethod(a,0);
+	}
+	
+	public static void voidMethod(int a, int b) {
+		System.out.println(a + b);
+	}
+	
+//	class Y {
+//		public void voidMethod2(int a) {
+//			Class2TestInnerClass.this.voidMethod2(a,0);
+//		}
+//	}
+	
+	public void voidMethod2(int a) {
+		voidMethod2(a,0);
+	}
+	
+	public void voidMethod2(int a, int b) {
+		System.out.println(a + b);
 	}
 }
