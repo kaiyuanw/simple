@@ -42,7 +42,7 @@ public class Class2TestInnerClass {
 //	}
 	
 	public static void voidMethod(int a) {
-		voidMethod(a,0);
+		Class2TestInnerClass.voidMethod(a,0);
 	}
 	
 	public static void voidMethod(int a, int b) {
@@ -56,7 +56,7 @@ public class Class2TestInnerClass {
 //	}
 	
 	public void voidMethod2(int a) {
-		voidMethod2(a,0);
+		Class2TestInnerClass.this.voidMethod2(a,0);
 	}
 	
 	public void voidMethod2(int a, int b) {
