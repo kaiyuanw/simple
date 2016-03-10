@@ -62,4 +62,20 @@ public class Class2TestInnerClass {
 	public void voidMethod2(int a, int b) {
 		System.out.println(a + b);
 	}
+	
+	public void voidMethod3(Class2TestInnerClass that) {
+		System.out.println(that.instanceField);
+	}
+	
+	public void voidMethod3() {
+		voidMethod3(this);
+	}
+	
+	public void method(String... s) {
+		System.out.println("XX");
+	}
+	
+	public void method(String s) {
+		System.out.println("YY");
+	}
 }
