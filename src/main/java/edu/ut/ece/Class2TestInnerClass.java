@@ -1,6 +1,6 @@
 package edu.ut.ece;
 
-public class Class2TestInnerClass {
+public class Class2TestInnerClass extends A implements I {
 	
 	private int instanceField = 1;
 	private static int staticField;
