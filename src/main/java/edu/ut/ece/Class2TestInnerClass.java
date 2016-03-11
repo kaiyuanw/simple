@@ -78,4 +78,8 @@ public class Class2TestInnerClass {
 	public void method(String s) {
 		System.out.println("YY");
 	}
+	
+	public void method(Integer[] s) {
+		System.out.println("ZZ");
+	}
 }
