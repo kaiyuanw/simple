@@ -21,7 +21,7 @@ def main(src, dst):
     pom.close()
 
 if __name__ == '__main__':
-    if not len(sys.argv) == 2:
+    if not len(sys.argv) == 3:
         print 'Usage: python jacoco.py src dst'
     src = sys.argv[1]
     dst = sys.argv[2]
