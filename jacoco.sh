@@ -1,3 +1,3 @@
 #!/bin/bash
-python jacoco.py jacoco.config pom.xml
+python jacoco.py pom.xml
 mvn clean test
