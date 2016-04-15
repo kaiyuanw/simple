@@ -59,14 +59,49 @@ surefire_argline = \
 '''
 
 def fill_before(content, stop_pattern, pom):
+    # occurs = re.findall(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
+    # for o in occurs:
+    #     print o
     result = re.match(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
     return (result.group(1) + content + result.group(2) + result.group(3))
 
-def fill_after(content, stop_pattern, pom):
-    result = re.match(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
-    return (result.group(1) + result.group(2) + content + result.group(3))
+def fill_after(content, stop_pattern, pom, invalid_pattern=''):
+    # print stop_pattern
+    result_string = pom
+    indices = [res.end() for res in re.finditer(r'(?s)' + stop_pattern, pom)]
+    invalid_ranges = [(res.start(), res.end()) for res in re.finditer(r'(?s)' + invalid_pattern, pom)]
+    # print len(indices)
+    for i in range(len(indices)):
+        if invalid_pattern != '':
+            find_invalid_index = False
+            for invalid_range in invalid_ranges:
+                if invalid_range[0] <= indices[i] and indices[i] <= invalid_range[1]:
+                    find_invalid_index = True
+                    break
+            if find_invalid_index:
+                # print result_string[:indices[i]]
+                # print '==================='
+                continue
+        result_string = result_string[:indices[i]] + content + result_string[indices[i]:]
+        # print result_string
+        for j in range(i+1,len(indices)):
+            indices[j] += len(content)
+
+        # print '==================='
+        # print occur[1]
+        # print '==================='
+        # print occur[2]
+    # print '==================='
+    # print '*******************'
+    # print '==================='
+    # result = re.match(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
+    # return (result.group(1) + result.group(2) + content + result.group(3))
+    return result_string
 
 def replace_center(content, stop_pattern, pom):
+    # occurs = re.findall(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
+    # for o in occurs:
+    #     print o
     result = re.match(r'(?s)(.*)(' + stop_pattern + ')(.*)', pom)
     return (result.group(1) + content + result.group(3))
 
@@ -126,9 +161,9 @@ def main(dst):
     else:
         if not has_jacoco_plugin:
             pom_string = \
-            fill_before(
+            fill_after(
             jacoco_plugin
-            , '</plugins>', pom_string)
+            , '<plugins>', pom_string, '<reporting>.*?</reporting>')
         else:
             pom_string = \
             replace_center(
@@ -138,9 +173,8 @@ def main(dst):
         if not has_surefire_plugin:
             pom_string = \
             fill_before(
-            jacoco_plugin
-            + surefire_plugin
-            , '</plugins>', pom_string)
+            surefire_plugin
+            , '</plugins>.*?</build>', pom_string)
         else:
             if not has_config_tag:
                 pom_string = \
@@ -163,6 +197,7 @@ def main(dst):
 if __name__ == '__main__':
     if not len(sys.argv) == 2:
         print 'Usage: python jacoco.py dst'
+        # exit(0)
     # src = ''#sys.argv[1]
-    dst = sys.argv[1]
+    dst = 'pom.xml'#sys.argv[1]
     main(dst)
