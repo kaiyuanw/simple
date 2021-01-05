@@ -13,4 +13,14 @@ public class BirdTest {
   public void testCanFly() {
     new Bird().canFly();
   }
+
+  @Test
+  public void testX() {
+    new Bird().x();
+  }
+
+  @Test
+  public void testY() {
+//    new Bird().y();
+  }
 }

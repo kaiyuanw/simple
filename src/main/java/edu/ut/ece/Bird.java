@@ -14,4 +14,8 @@ public class Bird extends Animal {
   public String canFly() {
     return "I can fly.";
   }
+
+  public void x() {}
+
+  public void y() {}
 }
