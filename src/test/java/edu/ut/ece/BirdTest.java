@@ -21,6 +21,6 @@ public class BirdTest {
 
   @Test
   public void testY() {
-//    new Bird().y();
+    new Bird().y();
   }
 }
