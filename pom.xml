@@ -40,9 +40,9 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7-SNAPSHOT</version>
+        <groupId>org.bjacoco</groupId>
+        <artifactId>bjacoco-maven-plugin</artifactId>
+        <version>0.8.6</version>
         <executions>
           <execution>
             <id>pre-unit-test</id>
@@ -62,7 +62,7 @@
             </goals>
             <configuration>
               <dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
-              <outputDirectory>${project.basedir}/jacoco-ut/${project.artifactId}</outputDirectory>
+              <outputDirectory>${project.build.directory}/coverage-reports/jacoco-ut</outputDirectory>
             </configuration>
           </execution>
         </executions>
